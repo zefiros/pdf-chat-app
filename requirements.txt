@@ -1,0 +1,12 @@
+flask
+flask-cors
+faiss-cpu
+torch
+transformers
+langchain
+sentence-transformers
+pypdf
+chromadb
+PyPDF2
+langchain
+langchain-community
