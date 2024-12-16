@@ -1,0 +1,22 @@
+<!-- app/frontend/index.html -->
+<!DOCTYPE html>
+<html>
+<body>
+    <input id="query" type="text">
+    <button onclick="searchDocuments()">Search</button>
+    <div id="response"></div>
+
+    <script>
+    async function searchDocuments() {
+        const query = document.getElementById('query').value;
+        const response = await fetch('http://localhost:5000/search', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({query})
+        });
+        const data = await response.json();
+        document.getElementById('response').innerText = data.response;
+    }
+    </script>
+</body>
+</html>
